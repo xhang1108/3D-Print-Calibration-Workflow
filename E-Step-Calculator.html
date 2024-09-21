@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-step Calculator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .calculator {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+        }
+        h2 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .formula {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+        }
+        .formula input {
+            width: 100px;  /* 從80px增加到100px */
+            margin: 0 5px;
+            text-align: center;
+            padding: 5px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            font-size: 0.85em;
+            background-color: #2a2a2a;
+            color: #ffffff;
+        }
+        .formula input::placeholder {
+            color: transparent;
+        }
+        .formula input[type="number"] {
+            -moz-appearance: textfield;
+        }
+        .formula input[type="number"]::-webkit-outer-spin-button,
+        .formula input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .input-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .placeholder {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            color: #888;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2em;
+            color: #ffffff;
+            background-color: #4CAF50;
+            border-radius: 4px;
+            padding: 10px;
+            transition: background-color 0.3s;
+            display: block;  /* 改为块级元素 */
+            max-width: 200px;  /* 保持最小宽度 */
+            margin-left: auto;  /* 左右 margin 设为 auto 以居中 */
+            margin-right: auto;
+        }
+        #result:empty {
+            display: none;
+        }
+        #result.error {
+            background-color: #f44336;
+        }
+        .fraction {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 10px;
+        }
+        .fraction > span {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .fraction span.fup {
+            margin-bottom: 5px;
+        }
+        .fraction span.fdn {
+            border-top: 2px solid #ffffff;
+            padding-top: 5px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .input-group {
+            display: inline-flex;
+            align-items: center;
+        }
+        .input-group input {
+            width: 100px;  /* 從80px增加到100px */
+            margin-right: 2px;
+        }
+        .unit {
+            font-size: 0.75em;
+            color: #aaa;
+            margin-left: 2px;
+        }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="calculator">
+        <h1>E-step Calculator</h1>
+        <div class="formula">
+            \(E_{\text{new}} = \)
+            <div class="input-group">
+                <div class="input-wrapper">
+                    <input type="number" id="E_current" placeholder=" ">
+                    <div class="placeholder">\(E_{\text{current}}\)</div>
+                </div>
+            </div>
+            \( \times \)
+            <span class="fraction">
+                <span class="fup">
+                    <div class="input-group">
+                        <div class="input-wrapper">
+                            <input type="number" id="L_measured" placeholder=" ">
+                            <div class="placeholder">\(L_{\text{measured}}\)</div>
+                        </div>
+                        <span class="unit">mm</span>
+                    </div>
+                </span>
+                <span class="fdn">
+                    <div class="input-group">
+                        <div class="input-wrapper">
+                            <input type="number" id="L_expected" placeholder=" " value="20">
+                            <div class="placeholder">\(L_{\text{expected}}\)</div>
+                        </div>
+                        <span class="unit">mm</span>
+                    </div>
+                </span>
+            </span>
+        </div>
+        <!-- 移除计算按钮 -->
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculate() {
+            const inputs = ['E_current', 'L_measured', 'L_expected'].map(id => parseFloat(document.getElementById(id).value));
+            const resultElement = document.getElementById('result');
+            
+            if (inputs.some(isNaN)) {
+                resultElement.innerHTML = 'Input number';
+                resultElement.classList.add('error');
+                return;
+            }
+            
+            const [E_current, L_measured, L_expected] = inputs;
+            const E_new = E_current * (L_measured / L_expected);
+            
+            resultElement.innerHTML = `\\(E_{\\text{new}} = ${E_new.toFixed(2)}\\)`;
+            resultElement.classList.remove('error');
+            MathJax.typeset();
+        }
+
+        function updatePlaceholder(input) {
+            input.nextElementSibling.style.display = input.value ? 'none' : 'flex';
+            calculate(); // 每次输入更新时都调用计算函数
+        }
+
+        document.querySelectorAll('.input-wrapper input').forEach(input => {
+            input.addEventListener('input', () => updatePlaceholder(input));
+            updatePlaceholder(input);
+        });
+
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.input-wrapper input').forEach(updatePlaceholder);
+        });
+    </script>
+</body>
+</html>
