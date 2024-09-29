@@ -100,33 +100,71 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+function getRelativePath() {
+    const path = window.location.pathname;
+    if (path.includes('/pages/') || path.includes('/Tools/')) {
+        return '../';
+    }
+    return './';
+}
+
 function loadNavbar() {
-    fetch('navbar.html')
+    const relativePath = getRelativePath();
+    fetch(relativePath + 'includes/navbar.html')
         .then(response => response.text())
         .then(data => {
             document.querySelector('header').innerHTML = data;
-            // 重新绑定事件监听器
-            const darkModeToggle = document.getElementById('darkModeToggle');
-            darkModeToggle.addEventListener('change', () => {
-                document.body.classList.toggle('dark-mode');
-                localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-            });
-
-            const searchInput = document.getElementById('searchInput');
-            const searchButton = document.getElementById('searchButton');
-            searchButton.addEventListener('click', performSearch);
-            searchInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    performSearch();
+            
+            // 修复导航栏链接
+            const navLinks = document.querySelectorAll('header a');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href').startsWith('pages/')) {
+                    if (relativePath === '../') {
+                        link.setAttribute('href', link.getAttribute('href').replace('pages/', ''));
+                    }
+                } else if (!link.getAttribute('href').startsWith('http') && !link.getAttribute('href').startsWith('#')) {
+                    link.setAttribute('href', relativePath + link.getAttribute('href'));
                 }
             });
-        });
+
+            // 重新绑定事件监听器
+            setupDarkModeToggle();
+            setupSearch();
+        })
+        .catch(error => console.error('Error loading navbar:', error));
 }
 
 function loadFooter() {
-    fetch('footer.html')
+    const relativePath = getRelativePath();
+    fetch(relativePath + 'includes/footer.html')
         .then(response => response.text())
         .then(data => {
             document.querySelector('footer').innerHTML = data;
-        });
+        })
+        .catch(error => console.error('Error loading footer:', error));
 }
+
+function setupDarkModeToggle() {
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+    }
+}
+
+function setupSearch() {
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
+    if (searchInput && searchButton) {
+        searchButton.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    }
+}
+
+// ... 其他现有函数 ...
