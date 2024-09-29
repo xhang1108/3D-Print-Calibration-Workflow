@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    loadNavbar();
+    loadFooter();
+
     const darkModeToggle = document.getElementById('darkModeToggle');
     const body = document.body;
 
@@ -96,3 +99,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+function loadNavbar() {
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('header').innerHTML = data;
+            // 重新绑定事件监听器
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            darkModeToggle.addEventListener('change', () => {
+                document.body.classList.toggle('dark-mode');
+                localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+            });
+
+            const searchInput = document.getElementById('searchInput');
+            const searchButton = document.getElementById('searchButton');
+            searchButton.addEventListener('click', performSearch);
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+        });
+}
+
+function loadFooter() {
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('footer').innerHTML = data;
+        });
+}

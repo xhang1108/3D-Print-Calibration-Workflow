@@ -6,57 +6,11 @@
     <title>E-Step Calibration - 3D Printing Calibration Workflow</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body class="dark-mode">
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li class="dropdown">
-                    <a href="#flow-chart"><i class="fas fa-project-diagram"></i> Flow Chart</a>
-                    <ul class="dropdown-content">
-                        <li><a href="simple-chart.html">Simple Chart</a></li>
-                        <li><a href="#ultimate-chart">Ultimate Chart</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#calibration"><i class="fas fa-sliders-h"></i> Calibration</a>
-                    <ul class="dropdown-content">
-                        <li><a href="frame-inspection.html">Frame Inspection</a></li>
-                        <li><a href="pid-autotune.html">PID Autotune</a></li>
-                        <li><a href="e-step.html">E-Step</a></li>
-                        <li><a href="xyz-step.html">XYZ-Step</a></li>
-                        <li><a href="acceleration-speed.html">Acceleration & Speed</a></li>
-                        <li><a href="bed-calibrate.html">Bed Calibrate</a></li>
-                        <li><a href="z-offset.html">Z-Offset</a></li>
-                        <li><a href="max-flow.html">Max Flow</a></li>
-                        <li><a href="input-shaping.html">Input Shaping</a></li>
-                        <li><a href="pressure-advance.html">Pressure Advance</a></li>
-                        <li><a href="temperature.html">Temperature</a></li>
-                        <li><a href="retraction.html">Retraction</a></li>
-                        <li><a href="flow.html">Flow</a></li>
-                        <li><a href="skew.html">Skew</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
-                    <ul class="dropdown-content">
-                        <li>
-                            <label class="switch">
-                                <input type="checkbox" id="darkModeToggle">
-                                <span class="slider round"></span>
-                            </label>
-                            <span>Dark Mode</span>
-                        </li>
-                    </ul>
-                </li>
-                <li class="search-container">
-                    <input type="text" id="searchInput" placeholder="Search...">
-                    <button id="searchButton"><i class="fas fa-search"></i></button>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <header></header>
 
     <div id="searchResults" class="search-results"></div>
 
@@ -64,27 +18,39 @@
         <h1>E-Step Calibration</h1>
 
         <section>
-            <h2>E-Step Calibration Steps</h2>
+            <h2>Prepare</h2>
+            <p>Before starting the E-Step calibration, ensure you have the following:</p>
+            <ul>
+                <li>Ruler or Caliper</li>
+                <li>Tape or Marker Pen</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>How to</h2>
+            <p>Follow these steps to calibrate the E-Steps:</p>
             <ol>
-                <li>Step 1 description</li>
-                <li>Step 2 description</li>
-                <!-- Add more steps -->
+                <li>Pull out the Bowden tube</li>
+                <li>Measure 120mm of filament</li>
+                <li>Extrude 100mm of filament</li>
+                <li>Measure the remaining filament</li>
+                <li>Enter the result and update</li>
             </ol>
         </section>
 
         <section>
-            <h2>Important Notes</h2>
-            <ul>
-                <li>Note 1</li>
-                <li>Note 2</li>
-                <!-- Add more notes -->
-            </ul>
+            <h2>Formula</h2>
+            <p><strong>\( E_{\text{new}} = E_{\text{current}} \times \frac{L_{\text{measured}}}{L_{\text{expected}}} \)</strong>
+            </p>
+        </section>
+
+        <section>
+            <h2>E-Step Calculator</h2>
+            <iframe src="Tools/E-Step-Calculator.html" width="100%" height="500px" style="border: none; border-radius: 10px;"></iframe>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 3D Printing Calibration Workflow | <a href="LICENSE">License</a></p>
-    </footer>
+    <footer></footer>
 
     <script src="script.js"></script>
 </body>
