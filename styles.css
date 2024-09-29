@@ -124,23 +124,28 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     background-color: var(--card-bg);
     border-radius: 10px;
     text-decoration: none;
     color: var(--text-color);
-    transition: transform 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
     font-size: 14px;
+    height: 100px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .calibration-item:hover {
     transform: translateY(-5px);
+    background-color: var(--button-bg);
+    color: var(--button-text);
 }
 
 .calibration-item i {
-    font-size: 1.5em;
-    margin-bottom: 5px;
+    font-size: 2em;
+    margin-bottom: 10px;
 }
 
 #darkModeToggle {
@@ -305,3 +310,100 @@ input:checked + .slider:before {
 }
 
 /* 在文件末尾添加以下代码 */
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    background-color: var(--card-bg);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#searchInput {
+    padding: 5px 10px;
+    border: none;
+    font-size: 14px;
+    background-color: transparent;
+    color: var(--text-color);
+    width: 150px;
+    transition: width 0.3s ease-in-out;
+}
+
+#searchInput:focus {
+    width: 200px;
+    outline: none;
+}
+
+#searchButton {
+    padding: 5px 10px;
+    border: none;
+    background-color: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#searchButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.search-results {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    background-color: var(--card-bg);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.search-result-item {
+    padding: 10px;
+    border-bottom: 1px solid var(--text-color);
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.search-result-item a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+    color: var(--text-color);
+}
+
+footer a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Light mode */
+body:not(.dark-mode) footer a {
+    color: #0066cc; /* 亮色模式下的链接颜色 */
+}
+
+body.dark-mode footer a {
+    color: #4a9fff; /* 深色模式下的链接颜色 */
+}
+
+/* ... 保留之前的CSS代码 ... */

@@ -15,7 +15,7 @@
                 <li class="dropdown">
                     <a href="#flow-chart"><i class="fas fa-project-diagram"></i> Flow Chart</a>
                     <ul class="dropdown-content">
-                        <li><a href="#simple-chart">Simple Chart</a></li>
+                        <li><a href="simple-chart.html">Simple Chart</a></li>
                         <li><a href="#ultimate-chart">Ultimate Chart</a></li>
                     </ul>
                 </li>
@@ -50,9 +50,15 @@
                         </li>
                     </ul>
                 </li>
+                <li class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                    <button id="searchButton"><i class="fas fa-search"></i></button>
+                </li>
             </ul>
         </nav>
     </header>
+
+    <div id="searchResults" class="search-results"></div>
 
     <main>
         <section id="home" class="hero">
@@ -67,7 +73,7 @@
                 <div class="card" id="simple-chart">
                     <h3>Simple Chart</h3>
                     <p>A basic calibration process for beginners.</p>
-                    <a href="#simple-chart" class="button">View Chart</a>
+                    <a href="simple-chart.html" class="button">View Chart</a>
                 </div>
                 <div class="card" id="ultimate-chart">
                     <h3>Ultimate Chart</h3>
@@ -93,7 +99,50 @@
                     <i class="fas fa-cogs"></i>
                     <span>E-Step</span>
                 </a>
-                <!-- Add more calibration items here -->
+                <a href="xyz-step.html" class="calibration-item">
+                    <i class="fas fa-arrows-alt"></i>
+                    <span>XYZ-Step</span>
+                </a>
+                <a href="acceleration-speed.html" class="calibration-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Acceleration & Speed</span>
+                </a>
+                <a href="bed-calibrate.html" class="calibration-item">
+                    <i class="fas fa-bed"></i>
+                    <span>Bed Calibrate</span>
+                </a>
+                <a href="z-offset.html" class="calibration-item">
+                    <i class="fas fa-arrows-alt-v"></i>
+                    <span>Z-Offset</span>
+                </a>
+                <a href="max-flow.html" class="calibration-item">
+                    <i class="fas fa-water"></i>
+                    <span>Max Flow</span>
+                </a>
+                <a href="input-shaping.html" class="calibration-item">
+                    <i class="fas fa-wave-square"></i>
+                    <span>Input Shaping</span>
+                </a>
+                <a href="pressure-advance.html" class="calibration-item">
+                    <i class="fas fa-compress-arrows-alt"></i>
+                    <span>Pressure Advance</span>
+                </a>
+                <a href="temperature.html" class="calibration-item">
+                    <i class="fas fa-thermometer-half"></i>
+                    <span>Temperature</span>
+                </a>
+                <a href="retraction.html" class="calibration-item">
+                    <i class="fas fa-undo"></i>
+                    <span>Retraction</span>
+                </a>
+                <a href="flow.html" class="calibration-item">
+                    <i class="fas fa-faucet"></i>
+                    <span>Flow</span>
+                </a>
+                <a href="skew.html" class="calibration-item">
+                    <i class="fas fa-draw-polygon"></i>
+                    <span>Skew</span>
+                </a>
             </div>
         </section>
     </main>
