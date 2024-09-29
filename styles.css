@@ -49,6 +49,7 @@ nav ul li a {
 
 nav ul li a i {
     margin-right: 5px;
+    font-size: 0.8em; /* 新添加的规则 */
 }
 
 main {
@@ -159,7 +160,6 @@ main {
     font-size: 1.5em;
 }
 
-/* Light mode */
 body:not(.dark-mode) {
     --bg-color: #ffffff;
     --text-color: #000000;
@@ -177,7 +177,7 @@ body:not(.dark-mode) {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: var(--card-bg); /* 使用不透明的背景色 */
+    background-color: var(--card-bg);
     min-width: 180px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -205,22 +205,20 @@ body:not(.dark-mode) {
 }
 
 .dropdown-content a:hover {
-    background-color: var(--button-bg); /* 使用按钮背景色作为悬停效果 */
-    color: var(--button-text); /* 确保文字颜色与背景对比 */
+    background-color: var(--button-bg);
+    color: var(--button-text);
     border-radius: 4px;
 }
 
-/* 如果需要，可以为亮色模式单独设置颜色 */
 body:not(.dark-mode) .dropdown-content {
-    background-color: #f0f0f0; /* 亮色模式下的背景色 */
+    background-color: #f0f0f0;
 }
 
 body:not(.dark-mode) .dropdown-content a:hover {
-    background-color: #0066cc; /* 亮色模式下的悬停背景色 */
-    color: #ffffff; /* 亮色模式下的悬停文字颜色 */
+    background-color: #0066cc;
+    color: #ffffff;
 }
 
-/* 修改开关样式 */
 .switch {
     position: relative;
     display: inline-block;
@@ -280,7 +278,6 @@ input:checked + .slider:before {
     padding: 6px 12px;
 }
 
-/* 调整Settings下拉菜单中的文本样式 */
 .dropdown-content li span {
     font-size: 14px;
     margin-left: 5px;
@@ -308,8 +305,6 @@ input:checked + .slider:before {
         display: block;
     }
 }
-
-/* 在文件末尾添加以下代码 */
 
 .search-container {
     display: flex;
@@ -383,7 +378,7 @@ input:checked + .slider:before {
 footer {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0px 20px;
     text-align: left;
     color: var(--text-color);
 }
@@ -397,13 +392,21 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Light mode */
 body:not(.dark-mode) footer a {
-    color: #0066cc; /* 亮色模式下的链接颜色 */
+    color: #0066cc;
 }
 
 body.dark-mode footer a {
-    color: #4a9fff; /* 深色模式下的链接颜色 */
+    color: #4a9fff;
 }
 
-/* ... 保留之前的CSS代码 ... */
+footer hr {
+    border: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 10px 0 5px 0;
+}
+
+body:not(.dark-mode) footer hr {
+    background-color: rgba(0, 0, 0, 0.1);
+}
