@@ -380,24 +380,29 @@ footer {
     margin: 0 auto;
     padding: 0px 20px;
     text-align: left;
-    color: var(--text-color);
+    color: rgba(255, 255, 255, 0.1); /* 更改为与分割线相同的颜色 */
 }
 
 footer a {
-    color: var(--link-color);
+    color: rgba(255, 255, 255, 0.1); /* 更改链接颜色 */
     text-decoration: none;
 }
 
 footer a:hover {
     text-decoration: underline;
+    color: var(--link-color); /* 保持悬停时的颜色不变 */
+}
+
+body:not(.dark-mode) footer {
+    color: rgba(0, 0, 0, 0.1); /* 浅色模式下的颜色 */
 }
 
 body:not(.dark-mode) footer a {
-    color: #0066cc;
+    color: rgba(0, 0, 0, 0.1); /* 浅色模式下的链接颜色 */
 }
 
-body.dark-mode footer a {
-    color: #4a9fff;
+body:not(.dark-mode) footer a:hover {
+    color: #0066cc; /* 浅色模式下悬停时的颜色 */
 }
 
 footer hr {
