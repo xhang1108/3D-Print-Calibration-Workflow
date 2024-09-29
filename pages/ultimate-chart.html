@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Chart - 3D Printing Calibration Workflow</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            themeVariables: {
+                darkMode: true,
+                background: '#1a1a1a',
+                primaryColor: '#4a9fff',
+                primaryTextColor: '#ffffff',
+                primaryBorderColor: '#1a1a1a',
+                lineColor: '#ffffff',
+                nodeTextColor: '#ffffff',
+                edgeLabelBackground: '#2a2a2a',
+                clusterBkg: '#2a2a2a',
+                clusterBorder: '#1a1a1a',
+                defaultLinkColor: '#4a9fff'
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+            document.querySelector('.mermaid').style.visibility = 'visible';
+        });
+    </script>
+    <style>
+        .mermaid {
+            visibility: hidden; /* 初始隐藏 */
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <header></header>
+
+    <div id="searchResults" class="search-results"></div>
+
+    <main>
+        <section class="hero">
+            <h1>Ultimate Chart</h1>
+            <p>This is AI generated chart I will update it later.</p>
+            <div class="mermaid">
+                graph TD
+                subgraph " "
+                    Start((START))
+                    End((END))
+
+                    A[Frame Inspection]
+                    B[PID Autotune]
+                    C[E-Step]
+                    D[XYZ Step]
+                    E[Acceleration]
+                    F[Speed]
+                    G[Bed Calibration]
+                    H[Z-Offset]
+                    I[Max Flow]
+                    J[Input Shaping]
+                    K[Pressure Advance]
+                    L[Temperature]
+                    M[Retraction]
+                    N[Skew]
+                    O[Flow]
+                    P[Linear Advance]
+                    Q[Jerk]
+                    R[Backlash]
+                    S[Resonance Compensation]
+
+                    Start --> A
+                    A --> B
+                    A --> C
+                    A --> D
+                    B --> E
+                    C --> E
+                    D --> E
+                    E --> F
+                    F --> G
+                    G --> H
+                    H --> I
+                    I --> J
+                    J --> K
+                    K --> L
+                    L --> M
+                    M --> N
+                    N --> O
+                    O --> P
+                    P --> Q
+                    Q --> R
+                    R --> S
+                    S --> End
+
+                    A -.-> |Periodic Check| G
+                    A -.-> |Periodic Check| D
+                    B -.-> |Periodic Check| G
+                    C -.-> |Periodic Check| O
+                    E -.-> |Fine Tuning| F
+                    I -.-> |Adjust| L
+                    J -.-> |Fine Tuning| E
+                    K -.-> |Fine Tuning| M
+                    L -.-> |Adjust| I
+                    M -.-> |Fine Tuning| O
+                    P -.-> |Fine Tuning| K
+                    Q -.-> |Fine Tuning| E
+                    R -.-> |Mechanical Adjustment| A
+                    S -.-> |Fine Tuning| J
+                end
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

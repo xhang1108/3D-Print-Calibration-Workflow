@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PID Autotune - 3D Printing Calibration Workflow</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body class="dark-mode">
+    <header></header>
+
+    <div id="searchResults" class="search-results"></div>
+
+    <main>
+        <h1>PID Autotune</h1>
+
+        <section>
+            <h2>What is PID Autotune?</h2>
+            <p>PID Autotune is a process that helps your 3D printer maintain consistent temperatures for the hotend and bed. It optimizes the Proportional, Integral, and Derivative values for better temperature control.</p>
+        </section>
+
+        <section>
+            <h2>Why is it Important?</h2>
+            <p>Proper PID tuning ensures:</p>
+            <ul>
+                <li>Stable temperatures during printing</li>
+                <li>Reduced temperature fluctuations</li>
+                <li>Better print quality</li>
+                <li>Increased energy efficiency</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>How to Perform PID Autotune</h2>
+            <ol>
+                <li>Connect to your printer via USB or OctoPrint</li>
+                <li>Ensure the hotend is at room temperature</li>
+                <li>Send the PID autotune command (e.g., M303 E0 S200 C8 for hotend)</li>
+                <li>Wait for the process to complete (may take 10-15 minutes)</li>
+                <li>Save the new PID values to EEPROM</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Tips</h2>
+            <ul>
+                <li>Perform PID autotune for both hotend and bed</li>
+                <li>Re-tune after changing nozzles or making significant changes to your printer</li>
+                <li>Ensure proper cooling during the tuning process</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ Step Calibration - 3D Printing Calibration Workflow</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body class="dark-mode">
+    <header></header>
+
+    <div id="searchResults" class="search-results"></div>
+
+    <main>
+        <h1>XYZ Step Calibration</h1>
+
+        <section>
+            <h2>What is XYZ Step Calibration?</h2>
+            <p>XYZ Step Calibration ensures that your 3D printer moves the correct distance along each axis when instructed. This is crucial for dimensional accuracy in your prints.</p>
+        </section>
+
+        <section>
+            <h2>Calibration Process</h2>
+            <ol>
+                <li>Mark a starting point on each axis</li>
+                <li>Command the printer to move 100mm on each axis</li>
+                <li>Measure the actual distance moved</li>
+                <li>Calculate new steps/mm using the formula: New Steps/mm = Current Steps/mm * (100 / Measured Distance)</li>
+                <li>Update the firmware with new values</li>
+                <li>Repeat the process to verify accuracy</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Tools Needed</h2>
+            <ul>
+                <li>Digital calipers or a precise ruler</li>
+                <li>Calculator</li>
+                <li>Computer to send commands and update firmware</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tips</h2>
+            <ul>
+                <li>Perform calibration with a cold printer to avoid thermal expansion effects</li>
+                <li>Ensure belts are properly tensioned before calibration</li>
+                <li>Double-check measurements for accuracy</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retraction Calibration - 3D Printing Calibration Workflow</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body class="dark-mode">
+    <header></header>
+
+    <div id="searchResults" class="search-results"></div>
+
+    <main>
+        <h1>Retraction Calibration</h1>
+
+        <section>
+            <h2>What is Retraction?</h2>
+            <p>Retraction is the process of pulling back the filament slightly to prevent oozing and stringing during non-printing moves. Proper retraction settings can significantly improve print quality.</p>
+        </section>
+
+        <section>
+            <h2>Calibration Process</h2>
+            <ol>
+                <li>Start with your slicer's default retraction settings</li>
+                <li>Print a retraction test model (e.g., retraction towers or cubes)</li>
+                <li>Adjust retraction distance and speed</li>
+                <li>Repeat the test print with new settings</li>
+                <li>Fine-tune until you achieve minimal stringing and oozing</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Factors to Consider</h2>
+            <ul>
+                <li>Filament type (e.g., PLA vs. PETG)</li>
+                <li>Direct drive vs. Bowden extruder</li>
+                <li>Nozzle temperature</li>
+                <li>Print speed</li>
+                <li>Travel move length</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tips</h2>
+            <ul>
+                <li>Start with lower retraction distances for direct drive extruders</li>
+                <li>Bowden setups typically require longer retraction distances</li>
+                <li>Consider enabling coasting or wiping in your slicer</li>
+                <li>Adjust retraction settings for each filament type</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

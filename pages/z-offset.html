@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-Offset Calibration - 3D Printing Calibration Workflow</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body class="dark-mode">
+    <header></header>
+
+    <div id="searchResults" class="search-results"></div>
+
+    <main>
+        <h1>Z-Offset Calibration</h1>
+
+        <section>
+            <h2>What is Z-Offset?</h2>
+            <p>Z-Offset is the distance between the nozzle and the print bed when the Z-axis is at the home position. Proper Z-Offset ensures good first layer adhesion.</p>
+        </section>
+
+        <section>
+            <h2>Calibration Process</h2>
+            <ol>
+                <li>Home all axes</li>
+                <li>Disable stepper motors</li>
+                <li>Move the nozzle to the center of the bed</li>
+                <li>Adjust Z-Offset until a piece of paper barely slides between the nozzle and bed</li>
+                <li>Save the new Z-Offset value</li>
+                <li>Print a test pattern to verify</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Tips</h2>
+            <ul>
+                <li>Perform Z-Offset calibration after bed leveling</li>
+                <li>Re-calibrate after changing nozzles or print surfaces</li>
+                <li>Use live Z-adjust during the first layer of a print for fine-tuning</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

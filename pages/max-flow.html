@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Flow Calibration - 3D Printing Calibration Workflow</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body class="dark-mode">
+    <header></header>
+
+    <div id="searchResults" class="search-results"></div>
+
+    <main>
+        <h1>Max Flow Calibration</h1>
+
+        <section>
+            <h2>What is Max Flow?</h2>
+            <p>Max Flow is the maximum rate at which your printer can extrude filament while maintaining print quality. It's crucial for optimizing print speed and quality.</p>
+        </section>
+
+        <section>
+            <h2>Calibration Process</h2>
+            <ol>
+                <li>Design or download a max flow test model</li>
+                <li>Start with conservative flow rates</li>
+                <li>Print the test model, increasing flow rates gradually</li>
+                <li>Observe print quality and look for signs of under-extrusion</li>
+                <li>Identify the highest flow rate that maintains good quality</li>
+                <li>Set your slicer's max volumetric speed accordingly</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Factors Affecting Max Flow</h2>
+            <ul>
+                <li>Nozzle diameter</li>
+                <li>Hotend design</li>
+                <li>Filament type and quality</li>
+                <li>Extruder capabilities</li>
+                <li>Print temperature</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

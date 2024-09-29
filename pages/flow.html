@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow Calibration - 3D Printing Calibration Workflow</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body class="dark-mode">
+    <header></header>
+
+    <div id="searchResults" class="search-results"></div>
+
+    <main>
+        <h1>Flow Calibration</h1>
+
+        <section>
+            <h2>What is Flow Calibration?</h2>
+            <p>Flow calibration ensures that your printer is extruding the correct amount of filament. Proper flow settings result in accurate dimensions and good print quality.</p>
+        </section>
+
+        <section>
+            <h2>Calibration Process</h2>
+            <ol>
+                <li>Print a single-wall cube (e.g., 20x20x20mm with 0.4mm wall thickness)</li>
+                <li>Measure the actual wall thickness using calipers</li>
+                <li>Calculate the new flow rate: New Flow = (Target Thickness / Measured Thickness) * Current Flow</li>
+                <li>Update the flow rate in your slicer</li>
+                <li>Print another test cube to verify the results</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Factors Affecting Flow</h2>
+            <ul>
+                <li>Filament diameter consistency</li>
+                <li>Extruder calibration (E-steps)</li>
+                <li>Nozzle diameter</li>
+                <li>Print temperature</li>
+                <li>Print speed</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tips</h2>
+            <ul>
+                <li>Calibrate E-steps before flow calibration</li>
+                <li>Use high-quality calipers for accurate measurements</li>
+                <li>Perform flow calibration for each filament type</li>
+                <li>Re-calibrate when changing nozzle sizes</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
