@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Printing Calibration Workflow</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body class="dark-mode">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li class="dropdown">
+                    <a href="#flow-chart"><i class="fas fa-project-diagram"></i> Flow Chart</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#simple-chart">Simple Chart</a></li>
+                        <li><a href="#ultimate-chart">Ultimate Chart</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#calibration"><i class="fas fa-sliders-h"></i> Calibration</a>
+                    <ul class="dropdown-content">
+                        <li><a href="frame-inspection.html">Frame Inspection</a></li>
+                        <li><a href="pid-autotune.html">PID Autotune</a></li>
+                        <li><a href="e-step.html">E-Step</a></li>
+                        <li><a href="xyz-step.html">XYZ-Step</a></li>
+                        <li><a href="acceleration-speed.html">Acceleration & Speed</a></li>
+                        <li><a href="bed-calibrate.html">Bed Calibrate</a></li>
+                        <li><a href="z-offset.html">Z-Offset</a></li>
+                        <li><a href="max-flow.html">Max Flow</a></li>
+                        <li><a href="input-shaping.html">Input Shaping</a></li>
+                        <li><a href="pressure-advance.html">Pressure Advance</a></li>
+                        <li><a href="temperature.html">Temperature</a></li>
+                        <li><a href="retraction.html">Retraction</a></li>
+                        <li><a href="flow.html">Flow</a></li>
+                        <li><a href="skew.html">Skew</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+                    <ul class="dropdown-content">
+                        <li>
+                            <label class="switch">
+                                <input type="checkbox" id="darkModeToggle">
+                                <span class="slider round"></span>
+                            </label>
+                            <span>Dark Mode</span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>3D Printing Calibration Workflow</h1>
+            <p>Optimize your 3D printer's performance with our comprehensive calibration guide.</p>
+            <a href="#flow-chart" class="cta-button">Get Started</a>
+        </section>
+
+        <section id="flow-chart" class="card-container">
+            <h2>Flow Chart</h2>
+            <div class="card-grid">
+                <div class="card" id="simple-chart">
+                    <h3>Simple Chart</h3>
+                    <p>A basic calibration process for beginners.</p>
+                    <a href="#simple-chart" class="button">View Chart</a>
+                </div>
+                <div class="card" id="ultimate-chart">
+                    <h3>Ultimate Chart</h3>
+                    <p>A comprehensive calibration process for experts.</p>
+                    <a href="#ultimate-chart" class="button">View Chart</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="calibration">
+            <h2>Calibration Steps</h2>
+            <p>Follow these steps to achieve optimal 3D printing results:</p>
+            <div class="calibration-grid">
+                <a href="frame-inspection.html" class="calibration-item">
+                    <i class="fas fa-cube"></i>
+                    <span>Frame Inspection</span>
+                </a>
+                <a href="pid-autotune.html" class="calibration-item">
+                    <i class="fas fa-temperature-high"></i>
+                    <span>PID Autotune</span>
+                </a>
+                <a href="e-step.html" class="calibration-item">
+                    <i class="fas fa-cogs"></i>
+                    <span>E-Step</span>
+                </a>
+                <!-- Add more calibration items here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 3D Printing Calibration Workflow | <a href="LICENSE">License</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

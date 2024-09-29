@@ -1,0 +1,307 @@
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --header-bg: rgba(29, 29, 31, 0.8);
+    --link-color: #4a9fff;
+    --card-bg: #2a2a2a;
+    --button-bg: #4a9fff;
+    --button-text: #ffffff;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--header-bg);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a i {
+    margin-right: 5px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #3a8fef;
+}
+
+.card-container {
+    margin-top: 40px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #3a8fef;
+}
+
+.calibration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.calibration-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.3s;
+    font-size: 14px;
+}
+
+.calibration-item:hover {
+    transform: translateY(-5px);
+}
+
+.calibration-item i {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+#darkModeToggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+/* Light mode */
+body:not(.dark-mode) {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --header-bg: rgba(255, 255, 255, 0.8);
+    --link-color: #0066cc;
+    --card-bg: #f0f0f0;
+    --button-bg: #0066cc;
+    --button-text: #ffffff;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--card-bg); /* 使用不透明的背景色 */
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 0;
+}
+
+.dropdown-content li {
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-content a {
+    padding: 6px 12px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--button-bg); /* 使用按钮背景色作为悬停效果 */
+    color: var(--button-text); /* 确保文字颜色与背景对比 */
+    border-radius: 4px;
+}
+
+/* 如果需要，可以为亮色模式单独设置颜色 */
+body:not(.dark-mode) .dropdown-content {
+    background-color: #f0f0f0; /* 亮色模式下的背景色 */
+}
+
+body:not(.dark-mode) .dropdown-content a:hover {
+    background-color: #0066cc; /* 亮色模式下的悬停背景色 */
+    color: #ffffff; /* 亮色模式下的悬停文字颜色 */
+}
+
+/* 修改开关样式 */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--button-bg);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 20px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.dropdown-content li {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+}
+
+/* 调整Settings下拉菜单中的文本样式 */
+.dropdown-content li span {
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+        width: 100%;
+        transform: none;
+        left: 0;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+/* 在文件末尾添加以下代码 */
