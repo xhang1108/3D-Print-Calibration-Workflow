@@ -30,11 +30,14 @@ body {
 header {
     background-color: var(--header-bg);
     backdrop-filter: blur(10px);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
     padding: 10px 0;
     width: 100%;
+    transition: transform 0.3s ease;
 }
 
 nav ul {
@@ -76,6 +79,7 @@ main {
     align-items: center;
     min-width: 320px;
     overflow: hidden;
+    margin-top: 60px;
 }
 
 .hero {
@@ -621,4 +625,9 @@ section.calculator iframe {
     border: none;
     border-radius: 10px;
     background: none;
+}
+
+/* 添加隱藏類 */
+.header-hidden {
+    transform: translateY(-100%);
 }

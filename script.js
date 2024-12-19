@@ -98,6 +98,27 @@ document.addEventListener('DOMContentLoaded', () => {
             searchResults.style.display = 'none';
         }
     });
+
+    // 添加滾動監聽
+    let lastScrollTop = 0;
+    const header = document.querySelector('header');
+    const scrollThreshold = 10;  // 滾動閾值
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // 檢查滾動方向和距離
+        if (Math.abs(scrollTop - lastScrollTop) > scrollThreshold) {
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // 向下滾動且不在頂部
+                header.classList.add('header-hidden');
+            } else {
+                // 向上滾動或在頂部
+                header.classList.remove('header-hidden');
+            }
+            lastScrollTop = scrollTop;
+        }
+    });
 });
 
 function getRelativePath() {
