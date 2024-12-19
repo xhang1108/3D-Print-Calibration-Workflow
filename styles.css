@@ -1,3 +1,8 @@
+@viewport {
+    width: device-width;
+    zoom: 1.0;
+}
+
 :root {
     --bg-color: #1a1a1a;
     --text-color: #ffffff;
@@ -16,6 +21,10 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    width: 100%;
+    min-width: 320px;
+    overflow-x: hidden;
+    position: relative;
 }
 
 header {
@@ -61,10 +70,12 @@ main {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 320px;
+    overflow: hidden;
 }
 
 .hero {
@@ -126,8 +137,13 @@ main {
 .calibration-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 10px;
+    gap: 15px;
     margin-top: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .calibration-item {
@@ -145,6 +161,9 @@ main {
     font-size: 14px;
     height: 100px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 .calibration-item:hover {
@@ -453,7 +472,7 @@ body:not(.dark-mode) footer hr {
 
 section {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     box-sizing: border-box;
     margin: 0 auto;
     padding: 0 20px;
@@ -526,7 +545,7 @@ section .importance-points p {
 
 nav {
     width: 100%;
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
@@ -597,7 +616,7 @@ section.calculator h2 {
 
 section.calculator iframe {
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     height: 500px;
     border: none;
     border-radius: 10px;
