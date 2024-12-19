@@ -416,8 +416,10 @@ body:not(.dark-mode) footer hr {
 }
 
 .importance-points {
-    width: fit-content;
+    width: 100%;
     margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .importance-points p {
@@ -429,8 +431,7 @@ body:not(.dark-mode) footer hr {
     transition: transform 0.2s;
     text-align: left;
     word-wrap: break-word;
-    width: fit-content;
-    min-width: 200px;
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -447,8 +448,8 @@ body:not(.dark-mode) footer hr {
 
 section {
     width: 100%;
-    margin: 0 auto;
-    padding: 0 1rem;
+    max-width: 800px;
+    box-sizing: border-box;
 }
 
 section ol,
@@ -466,6 +467,8 @@ section ul {
 h1, h2 {
     text-align: center;
     width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .steps .importance-points p {
