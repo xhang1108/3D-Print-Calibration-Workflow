@@ -113,7 +113,8 @@ function loadNavbar() {
     fetch(relativePath + 'includes/navbar.html')
         .then(response => response.text())
         .then(data => {
-            document.querySelector('header').innerHTML = data;
+            const header = document.querySelector('header');
+            header.innerHTML = data;
             
             // 修复导航栏链接
             const navLinks = document.querySelectorAll('header a');
@@ -130,9 +131,6 @@ function loadNavbar() {
             // 重新绑定事件监听器
             setupDarkModeToggle();
             setupSearch();
-            
-            // 在 navbar 加載完成後設置滾動監聽
-            setupScrollHideNavbar();
         })
         .catch(error => console.error('Error loading navbar:', error));
 }
@@ -168,26 +166,6 @@ function setupSearch() {
             }
         });
     }
-}
-
-// 添加新的函數來設置滾動監聽
-function setupScrollHideNavbar() {
-    let lastScrollTop = 0;
-    const header = document.querySelector('header');
-    const scrollThreshold = 10;
-
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (Math.abs(scrollTop - lastScrollTop) > scrollThreshold) {
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                header.classList.add('header-hidden');
-            } else {
-                header.classList.remove('header-hidden');
-            }
-            lastScrollTop = scrollTop;
-        }
-    });
 }
 
 // ... 其他现有函数 ...
