@@ -53,9 +53,13 @@ nav ul li a i {
 }
 
 main {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero {
@@ -380,29 +384,24 @@ footer {
     margin: 0 auto;
     padding: 0px 20px;
     text-align: left;
-    color: rgba(255, 255, 255, 0.1); /* 更改为与分割线相同的颜色 */
+    color: var(--text-color);
 }
 
 footer a {
-    color: rgba(255, 255, 255, 0.1); /* 更改链接颜色 */
+    color: var(--link-color);
     text-decoration: none;
 }
 
 footer a:hover {
     text-decoration: underline;
-    color: var(--link-color); /* 保持悬停时的颜色不变 */
-}
-
-body:not(.dark-mode) footer {
-    color: rgba(0, 0, 0, 0.1); /* 浅色模式下的颜色 */
 }
 
 body:not(.dark-mode) footer a {
-    color: rgba(0, 0, 0, 0.1); /* 浅色模式下的链接颜色 */
+    color: #0066cc;
 }
 
-body:not(.dark-mode) footer a:hover {
-    color: #0066cc; /* 浅色模式下悬停时的颜色 */
+body.dark-mode footer a {
+    color: #4a9fff;
 }
 
 footer hr {
@@ -414,4 +413,103 @@ footer hr {
 
 body:not(.dark-mode) footer hr {
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+.importance-points {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.importance-points p {
+    margin: 0.75rem 0;
+    line-height: 1.6;
+    padding: 0.75rem 1rem;
+    background-color: var(--card-bg);
+    border-radius: 6px;
+    transition: transform 0.2s;
+    text-align: left;
+    word-wrap: break-word;
+    width: fit-content;
+    min-width: 200px;
+    box-sizing: border-box;
+}
+
+.importance-points p:hover {
+    transform: translateX(5px);
+}
+
+.importance-points strong {
+    color: var(--link-color);
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-size: 0.95em;
+}
+
+section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+section ol,
+section ul {
+    width: fit-content;
+    margin: 0;
+    padding-left: 1.5rem;
+    text-align: left;
+}
+
+.two-columns {
+    display: block;
+}
+
+h1, h2 {
+    text-align: center;
+    width: 100%;
+}
+
+.steps .importance-points p {
+    position: relative;
+    padding-left: 3rem;  /* 为编号留出空间 */
+}
+
+.steps .importance-points p::before {
+    content: counter(step);
+    counter-increment: step;
+    position: absolute;
+    left: 1rem;
+    color: var(--link-color);
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.steps {
+    counter-reset: step;  /* 重置计数器 */
+}
+
+.tips .importance-points p {
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.tips .importance-points p::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f111";  /* Font Awesome 的实心圆点图标 */
+    position: absolute;
+    left: 1rem;
+    color: var(--link-color);
+    font-weight: 900;
+    font-size: 0.5em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+section .importance-points {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section .importance-points p {
+    width: 100%;
 }
