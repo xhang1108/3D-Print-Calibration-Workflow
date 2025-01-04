@@ -35,11 +35,45 @@
         <section class="steps">
             <h2>How to Perform PID Autotune</h2>
             <div class="importance-points">
-                <p>PID_CALIBRATE HEATER=extruder TARGET=200</p>
-                <p>Wait for the process to complete (may take 10-15 minutes)</p>
-                <p>PID_CALIBRATE HEATER=heater_bed TARGET=60</p>
-                <p>Wait for the process to complete (may take 10-15 minutes)</p>
-                <p>SAVE_CONFIG</p>
+                <div class="step-item">
+                    <div class="code-block step-content">
+                        <div class="code-header">
+                            <span class="code-title">Klipper Command</span>
+                            <button class="copy-button" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>PID_CALIBRATE HEATER=extruder TARGET=200</code></pre>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <p class="step-content">Wait for the process to complete (may take 10-15 minutes)</p>
+                </div>
+                <div class="step-item">
+                    <div class="code-block step-content">
+                        <div class="code-header">
+                            <span class="code-title">Klipper Command</span>
+                            <button class="copy-button" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>PID_CALIBRATE HEATER=heater_bed TARGET=60</code></pre>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <p class="step-content">Wait for the process to complete (may take 10-15 minutes)</p>
+                </div>
+                <div class="step-item">
+                    <div class="code-block step-content">
+                        <div class="code-header">
+                            <span class="code-title">Klipper Command</span>
+                            <button class="copy-button" onclick="copyCode(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <pre><code>SAVE_CONFIG</code></pre>
+                    </div>
+                </div>
             </div>
         </section>
 

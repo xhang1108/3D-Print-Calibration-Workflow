@@ -480,16 +480,6 @@ h1, h2 {
     padding-left: 3rem;  /* 为编号留出空间 */
 }
 
-.steps .importance-points p::before {
-    content: counter(step);
-    counter-increment: step;
-    position: absolute;
-    left: 1rem;
-    color: var(--link-color);
-    font-weight: bold;
-    font-size: 0.9em;
-}
-
 .steps {
     counter-reset: step;  /* 重置计数器 */
 }
@@ -599,4 +589,101 @@ section.calculator iframe {
     border: none;
     border-radius: 10px;
     background: none;
+}
+
+.code-block {
+    background-color: var(--card-bg);
+    border-radius: 6px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.code-title {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.copy-button {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.copy-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.copy-button.copied {
+    color: #28a745;
+}
+
+.code-block pre {
+    margin: 0;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+.code-block code {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9rem;
+}
+
+.step-item {
+    position: relative;
+    padding-left: 3rem;
+    margin: 0.75rem 0;
+    width: 100%;
+    box-sizing: border-box;
+    transition: transform 0.2s;
+}
+
+.step-item:hover {
+    transform: translateX(5px);
+}
+
+.step-content {
+    background-color: var(--card-bg);
+    border-radius: 6px;
+}
+
+.step-item p.step-content {
+    padding: 0.75rem 1rem;
+    margin: 0;
+}
+
+.step-item::before {
+    content: counter(step);
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--link-color);
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+/* 只在直接子元素上增加計數器 */
+.steps .importance-points > .step-item {
+    counter-increment: step;
+}
+
+.step-item .code-block {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    background-color: transparent;
 }
