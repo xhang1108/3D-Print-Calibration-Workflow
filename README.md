@@ -5,5 +5,3 @@ Goals:
 2. The webpage should be simple and clean.
 3. Dark mode design.
 4. Static webpage design that follows GitHub Pages guidelines.
-
-test
